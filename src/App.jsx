@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Experience from './components/Experience'
+import GeneralInfo from './components/GeneralInfo'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
         <Experience />
+        <GeneralInfo />
       </div>
     </>
   )
