@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Experience from './components/Experience'
 import GeneralInfo from './components/GeneralInfo'
+import Button from './components/Button'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,8 @@ function App() {
         </p>
         <Experience />
         <GeneralInfo />
+        <Button type='edit' onButtonClick={() => console.log('edit')}/>
+        <Button type='submit' onButtonClick={() => console.log('submit')}/>
       </div>
     </>
   )
