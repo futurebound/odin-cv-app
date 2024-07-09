@@ -17,7 +17,10 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-        <Experience />
+        <Experience type="work" />
+        <Experience type="work" />
+        <Experience type="work" />
+        <Experience type="work" />
         <GeneralInfo />
         <Button type='edit' onButtonClick={() => console.log('edit')}/>
         <Button type='submit' onButtonClick={() => console.log('submit')}/>

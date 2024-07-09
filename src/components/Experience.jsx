@@ -1,9 +1,10 @@
 
-function Experience() {
+// eslint-disable-next-line react/prop-types
+function Experience({ type }) {
 
 	return (
 		<div>
-			Experience Section
+			{type} Experience Section
 		</div>
 	)
 }
