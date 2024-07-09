@@ -12,9 +12,9 @@ function App() {
     <>
       <h1>CV App</h1>
       <div className="card">
-        <GeneralInfo type="name" />
-        <GeneralInfo type="email" />
-        <GeneralInfo type="phone" />
+        <GeneralInfo name="name" type="text" />
+        <GeneralInfo name="email" type="email" />
+        <GeneralInfo name="phone number" type="tel" />
         <EducationExperience type="education" />
         <WorkExperience type="work" />
         <Button type='edit' onButtonClick={() => console.log('edit')}/>

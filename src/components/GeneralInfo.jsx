@@ -1,10 +1,11 @@
 
 // eslint-disable-next-line react/prop-types
-function GeneralInfo({ type }) {
+function GeneralInfo({ name, type }) {
 
 	return (
 		<div>
-			{type} General Info Section
+			{name} General Info Section
+			<input type={type} />
 		</div>
 	)
 }
