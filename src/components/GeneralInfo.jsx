@@ -1,9 +1,10 @@
 
-function GeneralInfo() {
+// eslint-disable-next-line react/prop-types
+function GeneralInfo({ type }) {
 
 	return (
 		<div>
-			General Info Section
+			{type} General Info Section
 		</div>
 	)
 }
