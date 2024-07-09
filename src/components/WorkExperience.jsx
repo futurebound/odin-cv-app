@@ -1,6 +1,6 @@
 
 // eslint-disable-next-line react/prop-types
-function Experience({ type }) {
+function WorkExperience({ type }) {
 
 	return (
 		<div>
@@ -9,4 +9,4 @@ function Experience({ type }) {
 	)
 }
 
-export default Experience;
+export default WorkExperience;
