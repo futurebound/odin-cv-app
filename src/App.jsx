@@ -16,7 +16,13 @@ function App() {
 
   const [schoolName, setSchoolName] = useState('default school name')
   const [field, setField] = useState('default field of study')
-  const [graduationDate, setGraduationDate] = useState('june 2024')
+  const [graduationDate, setGraduationDate] = useState('default grad date')
+
+  const [companyName, setCompanyName] = useState('default company')
+  const [position, setPosition] = useState('default position')
+  const [responsibilities, setResponsibilities] = useState('default position')
+  const [startDate, setStartDate] = useState('default start date')
+  const [endDate, setEndDate] = useState('default end date')
 
   // GeneralInfo handlers
   function handleNameChange(e) {
@@ -44,6 +50,27 @@ function App() {
     setGraduationDate(e.target.value)
   }
 
+  // Work handlers
+  function handleCompanyChange(e) {
+    setCompanyName(e.target.value)
+  }
+
+  function handlePositionChange(e) {
+    setPosition(e.target.value)
+  }
+
+  function handleResponsibilitiesChange(e) {
+    setResponsibilities(e.target.value)
+  }
+
+  function handleStartDateChange(e) {
+    setStartDate(e.target.value)
+  }
+
+  function handleEndDateChange(e) {
+    setEndDate(e.target.value)
+  }
+
 
   return (
     <>
@@ -59,14 +86,20 @@ function App() {
           onFieldChange={handleFieldChange}
           onDateChange={handleGraduationChange}
         />
-        <Work type="work" />
+        <Work name={companyName} position={position} responsibilities={responsibilities} startDate={startDate} endDate={endDate} 
+          onNameChange={handleCompanyChange}
+          onPositionChange={handlePositionChange}
+          onResponsibilitiesChange={handleResponsibilitiesChange}
+          onStartChange={handleStartDateChange}
+          onEndChange={handleEndDateChange}
+        />
         <Button type='edit' onButtonClick={() => console.log('edit')}/>
         <Button type='submit' onButtonClick={() => console.log('submit')}/>
       </div>
       <div className="display">
         <GeneralInfoDisplay name={personName} email={email} phone={phone} />
         <EducationDisplay name={schoolName} field={field} date={graduationDate} />
-        <WorkDisplay />
+        <WorkDisplay name={companyName} position={position} responsibilities={responsibilities} startDate={startDate} endDate={endDate} />
       </div>
     </>
   )
