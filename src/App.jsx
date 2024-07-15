@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import WorkExperience from './components/WorkExperience'
-import EducationExperience from './components/EducationExperience'
-import GeneralInfo from './components/GeneralInfo'
+
 import Button from './components/Button'
+import Education from './components/Education.jsx'
+import EducationDisplay from './components/EducationDisplay.jsx'
+import GeneralInfo from './components/GeneralInfo'
+import GeneralInfoDisplay from './components/GeneralInfoDisplay.jsx'
+import Work from './components/Work.jsx'
+import WorkDisplay from './components/WorkDisplay.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -11,14 +15,17 @@ function App() {
   return (
     <>
       <h1>CV App</h1>
-      <div className="card">
-        <GeneralInfo name="name" type="text" />
-        <GeneralInfo name="email" type="email" />
-        <GeneralInfo name="phone number" type="tel" />
-        <EducationExperience type="education" />
-        <WorkExperience type="work" />
+      <div className="input">
+        <GeneralInfo />
+        <Education type="education" />
+        <Work type="work" />
         <Button type='edit' onButtonClick={() => console.log('edit')}/>
         <Button type='submit' onButtonClick={() => console.log('submit')}/>
+      </div>
+      <div className="display">
+        <GeneralInfoDisplay />
+        <EducationDisplay />
+        <WorkDisplay />
       </div>
     </>
   )
