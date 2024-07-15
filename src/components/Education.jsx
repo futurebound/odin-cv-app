@@ -1,18 +1,18 @@
 
 // eslint-disable-next-line react/prop-types
-function EducationExperience({ type }) {
+function Education({ name, field, date }) {
 
 	return (
 		<div>
-			{type} Experience Section
+			Education Experience Section
 			<p>School Name</p>
-			<input type="text" />
+			<input type="text" value={name} />
 			<p>Field of Study</p>
-			<input type="text" />
+			<input type="text" value={field} />
 			<p>Graduation Date</p>
-			<input type="date" />
+			<input type="date" value={date} />
 		</div>
 	)
 }
 
-export default EducationExperience;
+export default Education;

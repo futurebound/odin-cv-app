@@ -10,14 +10,20 @@ import Work from './components/Work.jsx'
 import WorkDisplay from './components/WorkDisplay.jsx'
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [personName, setPersonName] = useState('default name')
+
+  function handleNameChange(e) {
+    setPersonName(e.target.value)
+  }
+
+  function handle
 
   return (
     <>
       <h1>CV App</h1>
       <div className="input">
-        <GeneralInfo />
-        <Education type="education" />
+        <GeneralInfo name={personName} onChange={handleNameChange}/>
+        <Education name={schoolName} field={field} date={graduationDate} />
         <Work type="work" />
         <Button type='edit' onButtonClick={() => console.log('edit')}/>
         <Button type='submit' onButtonClick={() => console.log('submit')}/>
