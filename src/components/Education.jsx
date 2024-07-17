@@ -1,18 +1,37 @@
+/* eslint-disable react/prop-types */
+import Input from './Input.jsx';
 
-// eslint-disable-next-line react/prop-types
-function Education({ name, field, date, handleSchoolChange, handleFieldChange, handleGraduationChange }) {
-
-	return (
-		<div>
-			Education Experience Section
-			<h3>School Name</h3>
-			<input type="text" value={name} onChange={handleSchoolChange} />
-			<h3>Field of Study</h3>
-			<input type="text" value={field} onChange={handleFieldChange} />
-			<h3>Graduation Date</h3>
-			<input type="date" value={date} onChange={handleGraduationChange} />
-		</div>
-	)
+function Education({
+  name,
+  field,
+  date,
+  onSchoolChange,
+  onFieldChange,
+  onGraduationChange,
+}) {
+  return (
+    <div>
+      Education Experience
+      <Input
+        label='School Name'
+        type='text'
+        value={name}
+        onChange={onSchoolChange}
+      />
+      <Input
+        label='Field of Study'
+        type='text'
+        value={field}
+        onChange={onFieldChange}
+      />
+      <Input
+        label='Graduation Date'
+        type='date'
+        value={date}
+        onChange={onGraduationChange}
+      />
+    </div>
+  );
 }
 
 export default Education;
