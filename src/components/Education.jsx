@@ -12,24 +12,26 @@ function Education({
   return (
     <div>
       <h2>Education Experience</h2>
-      <Input
-        label='School Name'
-        type='text'
-        value={name}
-        onChange={onSchoolChange}
-      />
-      <Input
-        label='Field of Study'
-        type='text'
-        value={field}
-        onChange={onFieldChange}
-      />
-      <Input
-        label='Graduation Date'
-        type='date'
-        value={date}
-        onChange={onGraduationChange}
-      />
+      <div className='info-input'>
+        <Input
+          label='School Name'
+          type='text'
+          value={name}
+          onChange={onSchoolChange}
+        />
+        <Input
+          label='Field of Study'
+          type='text'
+          value={field}
+          onChange={onFieldChange}
+        />
+        <Input
+          label='Graduation Date'
+          type='date'
+          value={date}
+          onChange={onGraduationChange}
+        />
+      </div>
     </div>
   );
 }
