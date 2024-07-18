@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './styles/App.css';
 
 import Button from './components/Button';
 import Education from './components/Education.jsx';

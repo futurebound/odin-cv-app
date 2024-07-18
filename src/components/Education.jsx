@@ -11,7 +11,7 @@ function Education({
 }) {
   return (
     <div>
-      Education Experience
+      <h2>Education Experience</h2>
       <Input
         label='School Name'
         type='text'
