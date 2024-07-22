@@ -1,16 +1,16 @@
+/* eslint-disable react/prop-types */
 
-// eslint-disable-next-line react/prop-types
-function WorkDisplay({ name, position, responsibilities, startDate, endDate  }) {
-	return (
-		<div>
-			<h1>Work Experience</h1>
-			<p>Company Name: {name}</p>
-			<p>Position: {position}</p>
-			<p>Responsibilities: {responsibilities}</p>
-			<p>Start Date: {startDate}</p>
-			<p>End Date: {endDate}</p>
-		</div>
-	)
+function WorkDisplay({ data }) {
+  return (
+    <div>
+      <h1>Work Experience</h1>
+      <p>Company Name: {data.companyName}</p>
+      <p>Position: {data.position}</p>
+      <p>Responsibilities: {data.responsibilities}</p>
+      <p>Start Date: {data.startDate}</p>
+      <p>End Date: {data.endDate}</p>
+    </div>
+  );
 }
 
 export default WorkDisplay;
