@@ -22,7 +22,7 @@ function App() {
     },
   });
 
-  // const [isEditing, setIsEditing] = useState(true);
+  const [isEditing, setIsEditing] = useState(true);
 
   const handleInputChange = (section, field, value) => {
     setFormData((prev) => ({
@@ -34,78 +34,66 @@ function App() {
     }));
   };
 
-  // const [personName, setPersonName] = useState('default name');
-  // const [email, setEmail] = useState('default@email.com');
-  // const [phone, setPhone] = useState('(888)888-8888');
+  const handleSubmit = () => {
+    setIsEditing(false);
+  };
 
-  const [schoolName, setSchoolName] = useState('default school name');
-  const [field, setField] = useState('default field of study');
-  const [graduationDate, setGraduationDate] = useState('default grad date');
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
 
-  const [companyName, setCompanyName] = useState('default company');
-  const [position, setPosition] = useState('default position');
-  const [responsibilities, setResponsibilities] = useState('default position');
-  const [startDate, setStartDate] = useState('default start date');
-  const [endDate, setEndDate] = useState('default end date');
-
-  // GeneralInfo handlers
-  // function handleNameChange(e) {
-  //   setPersonName(e.target.value);
-  // }
-
-  // function handleEmailChange(e) {
-  //   setEmail(e.target.value);
-  // }
-
-  // function handlePhoneChange(e) {
-  //   setPhone(e.target.value);
-  // }
-
-  // Education handlers
-  function handleSchoolChange(e) {
-    setSchoolName(e.target.value);
-  }
-
-  function handleFieldChange(e) {
-    setField(e.target.value);
-  }
-
-  function handleGraduationChange(e) {
-    setGraduationDate(e.target.value);
-  }
+  // const [companyName, setCompanyName] = useState('default company');
+  // const [position, setPosition] = useState('default position');
+  // const [responsibilities, setResponsibilities] = useState('default position');
+  // const [startDate, setStartDate] = useState('default start date');
+  // const [endDate, setEndDate] = useState('default end date');
 
   // Work handlers
-  function handleCompanyChange(e) {
-    setCompanyName(e.target.value);
-  }
+  // function handleCompanyChange(e) {
+  //   setCompanyName(e.target.value);
+  // }
 
-  function handlePositionChange(e) {
-    setPosition(e.target.value);
-  }
+  // function handlePositionChange(e) {
+  //   setPosition(e.target.value);
+  // }
 
-  function handleResponsibilitiesChange(e) {
-    setResponsibilities(e.target.value);
-  }
+  // function handleResponsibilitiesChange(e) {
+  //   setResponsibilities(e.target.value);
+  // }
 
-  function handleStartDateChange(e) {
-    setStartDate(e.target.value);
-  }
+  // function handleStartDateChange(e) {
+  //   setStartDate(e.target.value);
+  // }
 
-  function handleEndDateChange(e) {
-    setEndDate(e.target.value);
-  }
+  // function handleEndDateChange(e) {
+  //   setEndDate(e.target.value);
+  // }
 
   return (
-    <>
-      <h1>CV App</h1>
-      <div className='input'>
-        <GeneralInfo
-          data={formData.general}
-          onInputChange={(field, value) =>
-            handleInputChange('general', field, value)
-          }
-        />
-        <Education
+    <div className='app'>
+      {isEditing ? (
+        <>
+          <h1>CV Info Input</h1>
+          <div className='input'>
+            <GeneralInfo
+              data={formData.general}
+              onInputChange={(field, value) =>
+                handleInputChange('general', field, value)
+              }
+            />
+            <Button type='submit' onButtonClick={handleSubmit} />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className='display'>
+            <h1>CV Display</h1>
+            <GeneralInfoDisplay data={formData.general} />
+            <Button type='edit' onButtonClick={handleEdit} />
+          </div>
+        </>
+      )}
+      {/* <Education
           name={schoolName}
           field={field}
           date={graduationDate}
@@ -124,13 +112,8 @@ function App() {
           onResponsibilitiesChange={handleResponsibilitiesChange}
           onStartChange={handleStartDateChange}
           onEndChange={handleEndDateChange}
-        />
-        <Button type='edit' onButtonClick={() => console.log('edit')} />
-        <Button type='submit' onButtonClick={() => console.log('submit')} />
-      </div>
-      <div className='display'>
-        <GeneralInfoDisplay data={formData.general} />
-        <EducationDisplay
+        /> */}
+      {/* <EducationDisplay
           name={schoolName}
           field={field}
           date={graduationDate}
@@ -141,9 +124,8 @@ function App() {
           responsibilities={responsibilities}
           startDate={startDate}
           endDate={endDate}
-        />
-      </div>
-    </>
+        /> */}
+    </div>
   );
 }
 
