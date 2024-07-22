@@ -10,7 +10,7 @@ function Education({ data, onInputChange }) {
           label='School Name'
           type='text'
           placeholder='School Name'
-          value={data.name}
+          value={data.schoolName}
           onChange={(e) => onInputChange('schoolName', e.target.value)}
         />
         <Input
@@ -24,7 +24,7 @@ function Education({ data, onInputChange }) {
           label='Graduation Date'
           type='date'
           placeholder=''
-          value={data.date}
+          value={data.graduationDate}
           onChange={(e) => onInputChange('graduationDate', e.target.value)}
         />
       </div>
