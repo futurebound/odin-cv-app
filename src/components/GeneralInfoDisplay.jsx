@@ -1,13 +1,13 @@
+/* eslint-disable react/prop-types */
 
-// eslint-disable-next-line react/prop-types
-function GeneralInfoDisplay({ name, email, phone }) {
-	return (
-		<div>
-			<h1>{name}</h1>
-			<h2>{email}</h2>
-			<h2>{phone}</h2>
-		</div>
-	)
+function GeneralInfoDisplay({ data }) {
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <h2>{data.email}</h2>
+      <h2>{data.phone}</h2>
+    </div>
+  );
 }
 
 export default GeneralInfoDisplay;

@@ -10,9 +10,33 @@ import Work from './components/Work.jsx';
 import WorkDisplay from './components/WorkDisplay.jsx';
 
 function App() {
-  const [personName, setPersonName] = useState('default name');
-  const [email, setEmail] = useState('default@email.com');
-  const [phone, setPhone] = useState('(888)888-8888');
+  const [formData, setFormData] = useState({
+    general: { name: '', email: '', phone: '' },
+    education: { schoolName: '', field: '', graduationDate: '' },
+    work: {
+      companyName: '',
+      position: '',
+      responsibilities: '',
+      startDate: '',
+      endDate: '',
+    },
+  });
+
+  // const [isEditing, setIsEditing] = useState(true);
+
+  const handleInputChange = (section, field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [section]: {
+        ...prev[section],
+        [field]: value,
+      },
+    }));
+  };
+
+  // const [personName, setPersonName] = useState('default name');
+  // const [email, setEmail] = useState('default@email.com');
+  // const [phone, setPhone] = useState('(888)888-8888');
 
   const [schoolName, setSchoolName] = useState('default school name');
   const [field, setField] = useState('default field of study');
@@ -25,17 +49,17 @@ function App() {
   const [endDate, setEndDate] = useState('default end date');
 
   // GeneralInfo handlers
-  function handleNameChange(e) {
-    setPersonName(e.target.value);
-  }
+  // function handleNameChange(e) {
+  //   setPersonName(e.target.value);
+  // }
 
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
-  }
+  // function handleEmailChange(e) {
+  //   setEmail(e.target.value);
+  // }
 
-  function handlePhoneChange(e) {
-    setPhone(e.target.value);
-  }
+  // function handlePhoneChange(e) {
+  //   setPhone(e.target.value);
+  // }
 
   // Education handlers
   function handleSchoolChange(e) {
@@ -76,12 +100,10 @@ function App() {
       <h1>CV App</h1>
       <div className='input'>
         <GeneralInfo
-          name={personName}
-          email={email}
-          phone={phone}
-          onNameChange={handleNameChange}
-          onEmailChange={handleEmailChange}
-          onPhoneChange={handlePhoneChange}
+          data={formData.general}
+          onInputChange={(field, value) =>
+            handleInputChange('general', field, value)
+          }
         />
         <Education
           name={schoolName}
@@ -107,7 +129,7 @@ function App() {
         <Button type='submit' onButtonClick={() => console.log('submit')} />
       </div>
       <div className='display'>
-        <GeneralInfoDisplay name={personName} email={email} phone={phone} />
+        <GeneralInfoDisplay data={formData.general} />
         <EducationDisplay
           name={schoolName}
           field={field}
