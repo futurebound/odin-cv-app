@@ -81,6 +81,12 @@ function App() {
                 handleInputChange('general', field, value)
               }
             />
+            <Education
+              data={formData.education}
+              onInputChange={(field, value) =>
+                handleInputChange('education', field, value)
+              }
+            />
             <Button type='submit' onButtonClick={handleSubmit} />
           </div>
         </>
@@ -89,18 +95,12 @@ function App() {
           <div className='display'>
             <h1>CV Display</h1>
             <GeneralInfoDisplay data={formData.general} />
+            <EducationDisplay data={formData.education} />
             <Button type='edit' onButtonClick={handleEdit} />
           </div>
         </>
       )}
-      {/* <Education
-          name={schoolName}
-          field={field}
-          date={graduationDate}
-          onSchoolChange={handleSchoolChange}
-          onFieldChange={handleFieldChange}
-          onGraduationChange={handleGraduationChange}
-        />
+      {/* 
         <Work
           name={companyName}
           position={position}
@@ -113,11 +113,7 @@ function App() {
           onStartChange={handleStartDateChange}
           onEndChange={handleEndDateChange}
         /> */}
-      {/* <EducationDisplay
-          name={schoolName}
-          field={field}
-          date={graduationDate}
-        />
+      {/* 
         <WorkDisplay
           name={companyName}
           position={position}
